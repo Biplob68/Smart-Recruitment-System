@@ -6,9 +6,9 @@ apps_name = 'mysite'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('login', views.login, name='login'),
-    path('about', views.about, name='about'),
-    path('jobsingle', views.jobsingle, name='jobsingle'),
+    path('login.html', views.login, name='login'),
+    path('about.html', views.about, name='about'),
+    path('job-single.html', views.jobsingle, name='jobsingle'),
 
 
 
