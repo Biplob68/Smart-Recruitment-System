@@ -5,18 +5,19 @@
     <title>JobBoard &mdash; Website Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       {% load static %}
     
-    
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="{% static 'mysite/css/custom-bs.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/fonts/icomoon/style.css' %}">
+     <link rel="stylesheet" href="{% static 'mysite/fonts/line-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/animate.min.css' %}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+     <link rel="stylesheet" href="{% static 'mysite/css/style.css' %}">
   </head>
   <body id="top">
 
@@ -90,7 +91,7 @@
     </header>
 
     <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url({% static 'mysite/images/hero_1.jpg' %});" id="home-section">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
@@ -112,7 +113,7 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
               <div class="border p-2 d-inline-block mr-3 rounded">
-                <img src="images/job_logo_5.jpg" alt="Image">
+                <img src="{% static 'mysite/images/job_logo_5.jpg' %}" alt="Image">
               </div>
               <div>
                 <h2>Product Designer</h2>
@@ -138,7 +139,7 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="mb-5">
-              <figure class="mb-5"><img src="images/job_single_img_1.jpg" alt="Image" class="img-fluid rounded"></figure>
+              <figure class="mb-5"><img src="{% static 'mysite/images/job_single_img_1.jpg' %}" alt="Image" class="img-fluid rounded"></figure>
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job Description</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum fuga eveniet. Deleniti asperiores, commodi quae ipsum quas est itaque, ipsa, dolore beatae voluptates nemo blanditiis iste eius officia minus.</p>
               <p>Velit unde aliquam et voluptas reiciendis non sapiente labore, deleniti asperiores blanditiis nihil quia officiis dolor vero iste dolore vel molestiae saepe. Id nisi, consequuntur sunt impedit quidem, vitae mollitia!</p>
@@ -229,7 +230,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_1.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_1.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -249,7 +250,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_2.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_2.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -269,7 +270,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_3.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_3.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -289,7 +290,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_4.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_4.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -309,7 +310,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_5.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_5.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -328,7 +329,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_1.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_1.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -348,7 +349,7 @@
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.html"></a>
             <div class="job-listing-logo">
-              <img src="images/job_logo_2.jpg" alt="Image" class="img-fluid">
+              <img src="{% static 'mysite/images/job_logo_2.jpg' %}" alt="Image" class="img-fluid">
             </div>
 
             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -406,7 +407,7 @@
                 </blockquote>
               </div>
               <div class="col-lg-6 align-self-end text-center text-lg-right">
-                <img src="images/person_transparent_2.png" alt="Image" class="img-fluid mb-0">
+                <img src="{% static 'mysite/images/person_transparent_2.png' %}" alt="Image" class="img-fluid mb-0">
               </div>
             </div>
           </div>
@@ -420,7 +421,7 @@
                 </blockquote>
               </div>
               <div class="col-lg-6 align-self-end text-center text-lg-right">
-                <img src="images/person_transparent.png" alt="Image" class="img-fluid mb-0">
+                <img  src="{% static 'mysite/images/person_transparent.png' %}" alt="Image" class="img-fluid mb-0">
               </div>
             </div>
           </div>
@@ -429,7 +430,7 @@
 
     </section>
 
-    <section class="pt-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
+    <section class="pt-5 bg-image overlay-primary fixed overlay" style="background-image: url({% static 'mysite/images/hero_1.jpg' %});">
       <div class="container">
         <div class="row">
           <div class="col-md-6 align-self-center text-center text-md-left mb-5 mb-md-0">
@@ -441,7 +442,7 @@
             </p>
           </div>
           <div class="col-md-6 ml-auto align-self-end">
-            <img src="images/apps.png" alt="Image" class="img-fluid">
+            <img src="{% static 'mysite/images/apps.png' %}" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>
@@ -508,21 +509,20 @@
   </div>
 
     <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/stickyfill.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    
-    <script src="js/bootstrap-select.min.js"></script>
-    
-    <script src="js/custom.js"></script>
+    <script src="{% static 'mysite/js/jquery.min.js' %}"></script>
+    <script src="{% static 'mysite/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'mysite/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'mysite/js/stickyfill.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.easing.1.3.js' %}"></script>
 
+    <script src="{% static 'mysite/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'mysite/js/owl.carousel.min.js' %}"></script>
+
+    <script src="{% static 'mysite/js/bootstrap-select.min.js' %}"></script>
+
+    <script src="{% static 'mysite/js/custom.js' %}"></script>
      
   </body>
 </html>
