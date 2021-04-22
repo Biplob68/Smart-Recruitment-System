@@ -14,6 +14,8 @@ def about(request):
 def jobsingle(request):
     return render(request, 'mysite/job-single.html')
 
+def postjob(request):
+    return render(request, 'mysite/post-job.html')
 
 
 
