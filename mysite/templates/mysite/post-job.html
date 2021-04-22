@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/quill.snow.css">
+       {% load static %}
+    <link rel="stylesheet" href="{% static 'mysite/css/custom-bs.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/fonts/line-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/quill.snow.css' %}">
     
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+     <link rel="stylesheet" href="{% static 'mysite/css/style.css' %}">
   </head>
   <body id="top">
 
@@ -92,7 +93,7 @@
     </header>
 
     <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url({% static 'mysite/images/hero_1.jpg' %});" id="home-section">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
@@ -315,22 +316,22 @@
   </div>
 
     <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/stickyfill.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/quill.min.js"></script>
-    
-    
-    <script src="js/bootstrap-select.min.js"></script>
-    
-    <script src="js/custom.js"></script>
+  <script src="{% static 'mysite/js/jquery.min.js' %}"></script>
+    <script src="{% static 'mysite/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'mysite/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'mysite/js/stickyfill.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.easing.1.3.js' %}"></script>
+
+    <script src="{% static 'mysite/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'mysite/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'mysite/js/quill.min.js' %}"></script>
+
+
+    <script src="{% static 'mysite/js/bootstrap-select.min.js' %}"></script>
+
+    <script src="{% static 'mysite/js/custom.js' %}"></script>
    
    
      
