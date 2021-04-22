@@ -2,7 +2,10 @@ from django.urls import path
 
 from . import views
 
-apps_name = 'mysite'
+from django.conf import settings
+from django.conf.urls.static import static
+
+#apps_name = 'mysite'
 
 urlpatterns = [
     path('', views.index, name='index'),
