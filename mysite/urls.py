@@ -13,6 +13,8 @@ urlpatterns = [
     path('about.html', views.about, name='about'),
     path('job-single.html', views.jobsingle, name='jobsingle'),
     path('post-job.html', views.postjob, name='postjob'),
+    path('contact.html', views.contact, name='contact'),
+
 
 
 
