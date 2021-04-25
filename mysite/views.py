@@ -6,7 +6,7 @@ def index(request):
     return render(request, 'mysite/index.html')
 
 def login(request):
-    return render(request, 'mysite/login.html')
+    return render(request, 'mysite/login1.html')
 
 def about(request):
     return render(request, 'mysite/about.html')
