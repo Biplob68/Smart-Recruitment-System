@@ -18,5 +18,5 @@ def postjob(request):
     return render(request, 'mysite/post-job.html')
 
 def contact(request):
-    return render(request, 'mysite/base.html')
+    return render(request, 'mysite/contact.html')
 
