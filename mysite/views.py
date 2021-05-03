@@ -16,7 +16,8 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request, 'Invalid Credentials')
-            return redirect('login.html')
+            return redirect('login')
+            #return redirect('/')
 
     else:
         return render(request, 'mysite/login.html')
@@ -37,25 +38,27 @@ def register(request):
         if password1 == password2 :
             if User.objects.filter(username=username).exists():
                 messages.info(request,'Username Taken!')
-                return redirect('/')
+                return redirect('register')
             elif User.objects.filter(email=email).exists():
                 messages.info(request,'Email Taken!')
-                return redirect('/')
+                return redirect('register')
             else:
                 user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
                 user.save()
                 messages.info(request, 'User Created!')
-                return redirect('login.html')
+                return redirect('login')
         else:
             messages.info(request, 'Password is not matching!')
-            return redirect('register.html')
-
-       # return redirect('/')
+            return redirect('register')
+        return redirect('/')
 
 
     else:
         return render(request, 'mysite/register.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 def about(request):
     return render(request, 'mysite/about.html')
