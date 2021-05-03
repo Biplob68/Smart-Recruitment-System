@@ -2,21 +2,17 @@ from django.urls import path
 
 from . import views
 
-from django.conf import settings
-from django.conf.urls.static import static
-
 #apps_name = 'mysite'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('login.html', views.login, name='login'),
-    path('register.html', views.register, name='register'),
-    path('about.html', views.about, name='about'),
-    path('job-single.html', views.jobsingle, name='jobsingle'),
-    path('post-job.html', views.postjob, name='postjob'),
-    path('contact.html', views.contact, name='contact'),
-
-
+    path("", views.index, name="home"),
+    path("login.html", views.login, name="login"),
+    path("register", views.register, name="register"),
+    path("logout", views.logout, name ="logout"),
+    path("about/", views.about, name="about"),
+    path("job-single.html", views.jobsingle, name="jobsingle"),
+    path("post-job.html", views.postjob, name="jobsingle"),
+    path("contact/", views.contact, name="contact"),
 
 
 ]
