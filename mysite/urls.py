@@ -14,7 +14,6 @@ urlpatterns = [
     path("logout.html", views.logout, name ="logout"),
     path("about.html", views.about, name="about"),
     path("job_listing.html", views.job_listing, name="job_listing"),
-    # path("job-single.html", views.jobsingle, name="jobsingle"),
     path("post-job.html", views.postjob, name="postjob"),
     path("contact.html", views.contact, name="contact"),
 

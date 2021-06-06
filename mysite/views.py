@@ -15,7 +15,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return render(request, 'mysite/index.html')
         else:
             messages.info(request, 'Invalid Credentials')
             return redirect('login')
@@ -39,14 +39,14 @@ def register(request):
 
         if password1 == password2 :
             if User.objects.filter(username=username).exists():
-                messages.info(request,'Username Taken!')
+                messages.info(request,'Username Already Taken!')
                 return redirect('register')
             elif User.objects.filter(email=email).exists():
                 messages.info(request,'Email Taken!')
                 return redirect('register')
             else:
                 user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
-                user.save()
+                user.save();
                 messages.info(request, 'User Created!')
                 return redirect('login')
         else:
