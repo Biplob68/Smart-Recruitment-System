@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import contact
+from mysite.models import Contact
+
+
+
+
 # Register your models here.
-
-
-
-admin.site.register(contact)
+admin.site.register(Contact)
 
