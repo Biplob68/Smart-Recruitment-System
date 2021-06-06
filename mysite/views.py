@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 # Create your views here.
+from mysite.models import Contact
+
 
 def index(request):
     return render(request, 'mysite/index.html')
@@ -63,12 +65,23 @@ def logout(request):
 def about(request):
     return render(request, 'mysite/about.html')
 
-def jobsingle(request):
-    return render(request, 'mysite/job-single.html')
+
+def job_listing(request):
+    return render(request, 'mysite/job-listings.html')
 
 def postjob(request):
     return render(request, 'mysite/post-job.html')
 
 def contact(request):
+    if request.method == "POST" :
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        subject = request.POST['subject']
+        description = request.POST['description']
+        print(name, email, phone, subject, description)
+        ins = Contact(name=name, email=email, phone=phone, subject=subject, description=description)
+        ins.save()
+        print("Data has been save in database!")
     return render(request, 'mysite/contact.html')
 
