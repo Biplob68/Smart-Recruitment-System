@@ -15,6 +15,8 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -32,10 +34,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../3-2/350/Project2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\js" />
+      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\css" />
       <recent name="F:\CSE Course Material\DjangoProject\mysite\templates\mysite" />
       <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite" />
     </key>
@@ -91,6 +96,15 @@
       <workItem from="1619796882539" duration="8969000" />
       <workItem from="1619974443119" duration="10890000" />
       <workItem from="1620070442163" duration="2139000" />
+      <workItem from="1621532185138" duration="2471000" />
+      <workItem from="1621833831154" duration="8332000" />
+      <workItem from="1622046863573" duration="3850000" />
+      <workItem from="1622310341232" duration="1311000" />
+      <workItem from="1622650629020" duration="1952000" />
+      <workItem from="1622660715256" duration="1800000" />
+      <workItem from="1622665911743" duration="6931000" />
+      <workItem from="1622786386203" duration="16534000" />
+      <workItem from="1622873416998" duration="7736000" />
     </task>
     <servers />
   </component>
