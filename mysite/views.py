@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.models import User, auth
-# Create your views here.
+
+from mysite import models
 from mysite.models import Contact
+from mysite.models import PostJob
+from django.contrib.auth.models import User, auth
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def index(request):
     return render(request, 'mysite/index.html')
+
 
 def login(request):
     if request.method == 'POST':
@@ -19,10 +24,11 @@ def login(request):
         else:
             messages.info(request, 'Invalid Credentials')
             return redirect('login')
-            #return redirect('/')
+            # return redirect('/')
 
     else:
         return render(request, 'mysite/login.html')
+
 
 def register(request):
     if request.method == 'POST':
@@ -32,21 +38,22 @@ def register(request):
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-        #phone = request.POST['phone']
-        #address = request.POST['address']
-        #linkedin_id = request.POST['linkedin_id']
-       # github_id = request.POST['github_id']
+        # phone = request.POST['phone']
+        # address = request.POST['address']
+        # linkedin_id = request.POST['linkedin_id']
+        # github_id = request.POST['github_id']
 
-        if password1 == password2 :
+        if password1 == password2:
             if User.objects.filter(username=username).exists():
-                messages.info(request,'Username Already Taken!')
+                messages.info(request, 'Username Already Taken!')
                 return redirect('register')
             elif User.objects.filter(email=email).exists():
-                messages.info(request,'Email Taken!')
+                messages.info(request, 'Email Taken!')
                 return redirect('register')
             else:
-                user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
-                user.save();
+                user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username,
+                                                email=email, password=password1)
+                user.save()
                 messages.info(request, 'User Created!')
                 return redirect('login')
         else:
@@ -54,26 +61,62 @@ def register(request):
             return redirect('register')
         return redirect('/')
 
-
     else:
         return render(request, 'mysite/register.html')
+
 
 def logout(request):
     auth.logout(request)
     return redirect('/')
 
+
 def about(request):
     return render(request, 'mysite/about.html')
 
 
-def job_listing(request):
-    return render(request, 'mysite/job-listings.html')
+def job_single(request):
+    all_jobs = PostJob.objects.all()
+    context = {'job_single': all_jobs}
 
-def postjob(request):
+    return render(request, 'mysite/job-single.html', context)
+
+def job_listings(request):
+    all_jobs = PostJob.objects.all()
+    context = {'job_listings': all_jobs}
+
+    return render(request, "mysite/job-listings.html", context)
+
+
+def post_job(request):
+    if request.method == "POST":
+        title = request.POST['title']
+        company_name = request.POST['company_name']
+        employment_status = request.POST['employment_status']
+        vacancy = request.POST['vacancy']
+        gender = request.POST['gender']
+        if 'details' in request.POST:
+            details = request.POST['details']
+        else:
+            details = False
+        # details = request.POST.get['details', False]
+        if 'responsibilities' in request.POST:
+            responsibilities = request.POST['responsibilities']
+        else:
+            responsibilities = False
+        # responsibilities = request.POST['responsibilities']
+        experience = request.POST['experience']
+        job_location = request.POST['job_location']
+        salary = request.POST['salary']
+        application_deadline = request.POST['application_deadline']
+        ins = PostJob(title=title, company_name=company_name, employment_status=employment_status, vacancy=vacancy, gender=gender, details=details,
+                      responsibilities=responsibilities, experience=experience, job_location=job_location, salary=salary, application_deadline=application_deadline)
+        ins.save()
+        print("The data hasbeen added into database!")
     return render(request, 'mysite/post-job.html')
 
+
 def contact(request):
-    if request.method == "POST" :
+    if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
@@ -84,4 +127,3 @@ def contact(request):
         ins.save()
         print("Data has been save in database!")
     return render(request, 'mysite/contact.html')
-

@@ -39,7 +39,7 @@ GENDER = (
 )
 
 # For post a job
-class JobListing(models.Model):
+class PostJob(models.Model):
     # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
     #                          null=True, editable=False, blank=True)
     title = models.CharField(max_length=100)
@@ -47,15 +47,17 @@ class JobListing(models.Model):
     employment_status = models.CharField(choices=JOB_TYPE, max_length=10)
     vacancy = models.CharField(max_length=10, null=True)
     gender = models.CharField(choices=GENDER, max_length=30, null=True)
-    category = models.CharField(choices=CATEGORY, max_length=30)
-    description = models.TextField()
+    # category = models.CharField(choices=CATEGORY, max_length=30)
+    details = models.TextField()
     responsibilities = models.TextField()
     experience = models.CharField(max_length=100)
     job_location = models.CharField(max_length=120)
-    Salary = models.CharField(max_length=100, null=True, blank=True)
-    image = models.ImageField(blank=True, upload_to='media', null=True)
-    application_deadline = models.DateTimeField()
-    published_on = models.DateTimeField(default=timezone.now)
+    salary = models.CharField(max_length=20, null=True, blank=True)
+    # image = models.ImageField(blank=True, upload_to='media', null=True)
+    application_deadline = models.DateTimeField(null=True, blank=True)
+    # published_on = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
+
+
