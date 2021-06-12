@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+
 
 from mysite import models
 from mysite.models import Contact
@@ -10,7 +11,7 @@ from django.contrib.auth.models import User
 
 
 def index(request):
-    return render(request, 'mysite/index.html')
+    return render(request, "mysite/index.html")
 
 
 def login(request):
@@ -74,11 +75,13 @@ def about(request):
     return render(request, 'mysite/about.html')
 
 
-def job_single(request):
-    all_jobs = PostJob.objects.all()
-    context = {'job_single': all_jobs}
+def job_single(request, id):
+    job_query = PostJob.objects.get(id=id)
+    context = {
+        'q': job_query,
+    }
+    return render(request, "mysite/job-single.html", context)
 
-    return render(request, 'mysite/job-single.html', context)
 
 def job_listings(request):
     all_jobs = PostJob.objects.all()
@@ -105,13 +108,14 @@ def post_job(request):
             responsibilities = False
         # responsibilities = request.POST['responsibilities']
         experience = request.POST['experience']
+        other_benefits = request.POST['other_benefits']
         job_location = request.POST['job_location']
         salary = request.POST['salary']
         application_deadline = request.POST['application_deadline']
         ins = PostJob(title=title, company_name=company_name, employment_status=employment_status, vacancy=vacancy, gender=gender, details=details,
-                      responsibilities=responsibilities, experience=experience, job_location=job_location, salary=salary, application_deadline=application_deadline)
+                      responsibilities=responsibilities, experience=experience, other_benefits=other_benefits, job_location=job_location, salary=salary, application_deadline=application_deadline)
         ins.save()
-        print("The data hasbeen added into database!")
+        print("The data has been added into database!")
     return render(request, 'mysite/post-job.html')
 
 
@@ -126,4 +130,4 @@ def contact(request):
         ins = Contact(name=name, email=email, phone=phone, subject=subject, description=description)
         ins.save()
         print("Data has been save in database!")
-    return render(request, 'mysite/contact.html')
+    return render(request, "mysite/contact.html")
