@@ -36,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../4-1/Web Technology/Course-Management-G35-main/Course-Management-G35" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -115,6 +115,7 @@
       <workItem from="1623364309238" duration="444000" />
       <workItem from="1623575571466" duration="225000" />
       <workItem from="1624641743162" duration="1957000" />
+      <workItem from="1624806996268" duration="3633000" />
     </task>
     <servers />
   </component>
