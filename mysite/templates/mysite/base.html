@@ -5,6 +5,10 @@
     <title>JobBoard &mdash; Website Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Free-Template.co" />
+    <link rel="shortcut icon" href="ftco-32x32.png">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'mysite/css/custom-bs.css' %}">
@@ -14,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'mysite/fonts/line-icons/style.css' %}">
     <link rel="stylesheet" href="{% static 'mysite/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'mysite/css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'mysite/css/quill.snow.css' %}">
+   <!-- <link rel="stylesheet" href="{% static 'mysite/css/quill.snow.css' %}">  -->
 
 
     <!-- MAIN CSS -->
@@ -48,13 +52,13 @@
     <header class="site-navbar mt-3">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="site-logo col-6"><a href="index.html">JobBoard</a></div>
+                <div class="site-logo col-6"><a href="{% url 'index' %}">JobBoard</a></div>
 
                  <nav class="mx-auto site-navigation">
 
                     <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                        <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-                        <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                        <li><a href="{% url 'index' %}" class="nav-link active">Home</a></li>
+                        <li><a href="{% url 'about' %}" >About</a></li>
                         <li><a href="{% url 'job-listings' %}">Job Listings</a></li>
 {#                        <li class="has-children">#}
 {#                            <a href="services.html">Pages</a>#}
@@ -184,7 +188,7 @@
 <script src="{% static 'mysite/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'mysite/js/jquery.animateNumber.min.js' %}"></script>
 <script src="{% static 'mysite/js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'mysite/js/quill.min.js' %}"></script>
+<!-- <script src="{% static 'mysite/js/quill.min.js' %}"></script>-->
 
 
 <script src="{% static 'mysite/js/bootstrap-select.min.js' %}"></script>

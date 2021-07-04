@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0354f836-3a14-4455-8ab4-2d28963f3803" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/mysite/js/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/mysite/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/mysite/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +38,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../3-2/350/Project2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysite/templates/mysite" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\js" />
-      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\css" />
       <recent name="F:\CSE Course Material\DjangoProject\mysite\templates\mysite" />
       <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite" />
+      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\js" />
+      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -116,7 +117,9 @@
       <workItem from="1623364309238" duration="444000" />
       <workItem from="1623575571466" duration="225000" />
       <workItem from="1624641743162" duration="1957000" />
-      <workItem from="1624806996268" duration="11356000" />
+      <workItem from="1624806996268" duration="12975000" />
+      <workItem from="1625410251005" duration="1659000" />
+      <workItem from="1625412041438" duration="2716000" />
     </task>
     <servers />
   </component>
