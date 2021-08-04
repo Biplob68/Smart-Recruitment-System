@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0354f836-3a14-4455-8ab4-2d28963f3803" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/mysite/job-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/mysite/job-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +18,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -26,7 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qsXo5dmbxjBuCS6CATZfwgWaNM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -118,6 +123,10 @@
       <workItem from="1624806996268" duration="12975000" />
       <workItem from="1625410251005" duration="1659000" />
       <workItem from="1625412041438" duration="2716000" />
+      <workItem from="1625565725164" duration="6887000" />
+      <workItem from="1625781229590" duration="913000" />
+      <workItem from="1625820971785" duration="3594000" />
+      <workItem from="1626019915865" duration="1743000" />
     </task>
     <servers />
   </component>

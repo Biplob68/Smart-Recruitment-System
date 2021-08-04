@@ -70,9 +70,17 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
+@login_required
+def profile(request, id):
+    u = User.objects.get(id = id)
+    return render(request, 'mysite/profile.html', {'u': u})
 
 def about(request):
     return render(request, 'mysite/about.html')
+
+
+def applyjob(request):
+    return render(request, 'mysite/applyjob.html')
 
 
 def job_single(request, id):

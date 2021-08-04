@@ -1,0 +1,24 @@
+{% extends "mysite/base.html" %}
+{% load static %}
+
+{% block body %}
+
+<h2 style="text-align:center">Profile</h2>
+
+<div class="card">
+
+  <h1>{{u.get_full_name}}</h1>
+  <p class="title">Full Name: {{u.username}}</p>
+  <p class="title">Email: {{u.email}}</p>
+
+
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+  <p><button></button></p>
+</div>
+
+{% endblock %}
