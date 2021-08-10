@@ -1,152 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="0354f836-3a14-4455-8ab4-2d28963f3803" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/mysite/job-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/mysite/job-single.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
-    </list>
-=======
-    <list default="true" id="0354f836-3a14-4455-8ab4-2d28963f3803" name="Default Changelist" comment="" />
->>>>>>> Stashed changes
+    <list default="true" id="432d6ce2-2cfe-4f29-ad39-8046cb08a5df" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="Python Script" />
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1qsXo5dmbxjBuCS6CATZfwgWaNM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1wWViGXUcmvaXPx1W71cbxBkA6z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysite/templates/mysite" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\CSE Course Material\DjangoProject\mysite\templates\mysite" />
-      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite" />
-      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\js" />
-      <recent name="F:\CSE Course Material\DjangoProject\mysite\static\mysite\css" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="DjangoProject" type="Python.DjangoServer" factoryName="Django server">
-      <module name="DjangoProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0354f836-3a14-4455-8ab4-2d28963f3803" name="Default Changelist" comment="" />
-      <created>1617869443679</created>
+      <changelist id="432d6ce2-2cfe-4f29-ad39-8046cb08a5df" name="Default Changelist" comment="" />
+      <created>1628574513256</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617869443679</updated>
-      <workItem from="1617869535313" duration="15030000" />
-      <workItem from="1617886904276" duration="18393000" />
-      <workItem from="1617960690534" duration="1801000" />
-      <workItem from="1618165955817" duration="138000" />
-      <workItem from="1618500703170" duration="7635000" />
-      <workItem from="1618936236000" duration="7671000" />
-      <workItem from="1619028779279" duration="3423000" />
-      <workItem from="1619104870890" duration="2566000" />
-      <workItem from="1619116334133" duration="3299000" />
-      <workItem from="1619203550256" duration="2017000" />
-      <workItem from="1619284325008" duration="4862000" />
-      <workItem from="1619463577353" duration="582000" />
-      <workItem from="1619535371355" duration="8116000" />
-      <workItem from="1619628299539" duration="2995000" />
-      <workItem from="1619711183161" duration="11408000" />
-      <workItem from="1619796882539" duration="8969000" />
-      <workItem from="1619974443119" duration="10890000" />
-      <workItem from="1620070442163" duration="2139000" />
-      <workItem from="1621532185138" duration="2471000" />
-      <workItem from="1621833831154" duration="8332000" />
-      <workItem from="1622046863573" duration="3850000" />
-      <workItem from="1622310341232" duration="1311000" />
-      <workItem from="1622650629020" duration="1952000" />
-      <workItem from="1622660715256" duration="1800000" />
-      <workItem from="1622665911743" duration="6931000" />
-      <workItem from="1622786386203" duration="16534000" />
-      <workItem from="1622873416998" duration="17181000" />
-      <workItem from="1622974262512" duration="664000" />
-      <workItem from="1622991943742" duration="15024000" />
-      <workItem from="1623018584248" duration="4903000" />
-      <workItem from="1623048417082" duration="20143000" />
-      <workItem from="1623133796696" duration="34169000" />
-      <workItem from="1623364309238" duration="444000" />
-      <workItem from="1623575571466" duration="225000" />
-      <workItem from="1624641743162" duration="1957000" />
-      <workItem from="1624806996268" duration="12975000" />
-      <workItem from="1625410251005" duration="1659000" />
-      <workItem from="1625412041438" duration="2716000" />
-      <workItem from="1625565725164" duration="6887000" />
-      <workItem from="1625781229590" duration="913000" />
-      <workItem from="1625820971785" duration="3594000" />
-      <workItem from="1626019915865" duration="1743000" />
+      <updated>1628574513256</updated>
+      <workItem from="1628574524691" duration="157000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
