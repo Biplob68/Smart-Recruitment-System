@@ -225,7 +225,14 @@ class BaseDatabaseSchemaEditor:
         # Work out nullability
         null = field.null
         # If we were told to include a default value, do so
-        include_default = include_default and not self.skip_default(field)
+        include_default = (
+            include_default and
+            not self.skip_default(field) and
+            # Don't include a default value if it's a nullable field and the
+            # default cannot be dropped in the ALTER COLUMN statement (e.g.
+            # MySQL longtext and longblob).
+            not (null and self.skip_default_on_alter(field))
+        )
         if include_default:
             default_value = self.effective_default(field)
             column_default = ' DEFAULT ' + self._column_default_sql(field)
@@ -263,6 +270,13 @@ class BaseDatabaseSchemaEditor:
         """
         Some backends don't accept default values for certain columns types
         (i.e. MySQL longtext and longblob).
+        """
+        return False
+
+    def skip_default_on_alter(self, field):
+        """
+        Some backends don't accept default values for certain columns types
+        (i.e. MySQL longtext and longblob) in the ALTER COLUMN statement.
         """
         return False
 
@@ -508,7 +522,7 @@ class BaseDatabaseSchemaEditor:
         self.execute(sql, params)
         # Drop the default if we need to
         # (Django usually does not use in-database defaults)
-        if not self.skip_default(field) and self.effective_default(field) is not None:
+        if not self.skip_default_on_alter(field) and self.effective_default(field) is not None:
             changes_sql, params = self._alter_column_default_sql(model, None, field, drop=True)
             sql = self.sql_alter_column % {
                 "table": self.quote_name(model._meta.db_table),
@@ -721,7 +735,7 @@ class BaseDatabaseSchemaEditor:
             old_default = self.effective_default(old_field)
             new_default = self.effective_default(new_field)
             if (
-                not self.skip_default(new_field) and
+                not self.skip_default_on_alter(new_field) and
                 old_default != new_default and
                 new_default is not None
             ):

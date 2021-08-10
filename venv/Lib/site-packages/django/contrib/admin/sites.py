@@ -420,14 +420,13 @@ class AdminSite:
     def catch_all_view(self, request, url):
         if settings.APPEND_SLASH and not url.endswith('/'):
             urlconf = getattr(request, 'urlconf', None)
-            path = '%s/' % request.path_info
             try:
-                match = resolve(path, urlconf)
+                match = resolve('%s/' % request.path_info, urlconf)
             except Resolver404:
                 pass
             else:
                 if getattr(match.func, 'should_append_slash', True):
-                    return HttpResponsePermanentRedirect(path)
+                    return HttpResponsePermanentRedirect('%s/' % request.path)
         raise Http404
 
     def _build_app_dict(self, request, label=None):
@@ -525,6 +524,7 @@ class AdminSite:
         context = {
             **self.each_context(request),
             'title': self.index_title,
+            'subtitle': None,
             'app_list': app_list,
             **(extra_context or {}),
         }
@@ -542,6 +542,7 @@ class AdminSite:
         context = {
             **self.each_context(request),
             'title': _('%(app)s administration') % {'app': app_dict['name']},
+            'subtitle': None,
             'app_list': [app_dict],
             'app_label': app_label,
             **(extra_context or {}),

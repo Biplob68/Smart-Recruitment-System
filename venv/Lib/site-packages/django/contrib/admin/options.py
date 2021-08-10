@@ -1019,20 +1019,22 @@ class ModelAdmin(BaseModelAdmin):
             # Otherwise, use the field with icontains.
             return "%s__icontains" % field_name
 
-        use_distinct = False
+        may_have_duplicates = False
         search_fields = self.get_search_fields(request)
         if search_fields and search_term:
             orm_lookups = [construct_search(str(search_field))
                            for search_field in search_fields]
             for bit in smart_split(search_term):
-                if bit.startswith(('"', "'")):
+                if bit.startswith(('"', "'")) and bit[0] == bit[-1]:
                     bit = unescape_string_literal(bit)
                 or_queries = [models.Q(**{orm_lookup: bit})
                               for orm_lookup in orm_lookups]
                 queryset = queryset.filter(reduce(operator.or_, or_queries))
-            use_distinct |= any(lookup_needs_distinct(self.opts, search_spec) for search_spec in orm_lookups)
-
-        return queryset, use_distinct
+            may_have_duplicates |= any(
+                lookup_needs_distinct(self.opts, search_spec)
+                for search_spec in orm_lookups
+            )
+        return queryset, may_have_duplicates
 
     def get_preserved_filters(self, request):
         """
@@ -1890,6 +1892,7 @@ class ModelAdmin(BaseModelAdmin):
         context = {
             **self.admin_site.each_context(request),
             'title': title,
+            'subtitle': None,
             'object_name': object_name,
             'object': obj,
             'deleted_objects': deleted_objects,
@@ -1930,6 +1933,7 @@ class ModelAdmin(BaseModelAdmin):
         context = {
             **self.admin_site.each_context(request),
             'title': _('Change history: %s') % obj,
+            'subtitle': None,
             'action_list': action_list,
             'module_name': str(capfirst(opts.verbose_name_plural)),
             'object': obj,

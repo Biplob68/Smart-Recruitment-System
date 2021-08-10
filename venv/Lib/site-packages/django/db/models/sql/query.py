@@ -30,7 +30,9 @@ from django.db.models.lookups import Lookup
 from django.db.models.query_utils import (
     Q, check_rel_lookup_compatibility, refs_expression,
 )
-from django.db.models.sql.constants import INNER, LOUTER, ORDER_DIR, SINGLE
+from django.db.models.sql.constants import (
+    INNER, LOUTER, ORDER_DIR, ORDER_PATTERN, SINGLE,
+)
 from django.db.models.sql.datastructures import (
     BaseTable, Empty, Join, MultiJoin,
 )
@@ -39,7 +41,6 @@ from django.db.models.sql.where import (
 )
 from django.utils.deprecation import RemovedInDjango40Warning
 from django.utils.functional import cached_property
-from django.utils.hashable import make_hashable
 from django.utils.tree import Node
 
 __all__ = ['Query', 'RawQuery']
@@ -252,14 +253,6 @@ class Query(BaseExpression):
     def base_table(self):
         for alias in self.alias_map:
             return alias
-
-    @property
-    def identity(self):
-        identity = (
-            (arg, make_hashable(value))
-            for arg, value in self.__dict__.items()
-        )
-        return (self.__class__, *identity)
 
     def __str__(self):
         """
@@ -633,6 +626,10 @@ class Query(BaseExpression):
                 self.unref_alias(new_alias)
         joinpromoter.add_votes(rhs_votes)
         joinpromoter.update_join_types(self)
+
+        # Combine subqueries aliases to ensure aliases relabelling properly
+        # handle subqueries when combining where and select clauses.
+        self.subq_aliases |= rhs.subq_aliases
 
         # Now relabel a copy of the rhs where-clause and add it to the current
         # one.
@@ -1974,7 +1971,7 @@ class Query(BaseExpression):
         errors = []
         for item in ordering:
             if isinstance(item, str):
-                if '.' in item:
+                if '.' in item and ORDER_PATTERN.match(item):
                     warnings.warn(
                         'Passing column raw column aliases to order_by() is '
                         'deprecated. Wrap %r in a RawSQL expression before '

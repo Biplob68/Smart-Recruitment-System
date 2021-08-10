@@ -17,7 +17,7 @@ from django.core.exceptions import (
     FieldDoesNotExist, ImproperlyConfigured, SuspiciousOperation,
 )
 from django.core.paginator import InvalidPage
-from django.db.models import F, Field, ManyToOneRel, OrderBy
+from django.db.models import Exists, F, Field, ManyToOneRel, OrderBy, OuterRef
 from django.db.models.expressions import Combinable
 from django.urls import reverse
 from django.utils.http import urlencode
@@ -122,7 +122,7 @@ class ChangeList:
 
     def get_filters(self, request):
         lookup_params = self.get_filters_params()
-        use_distinct = False
+        may_have_duplicates = False
         has_active_filters = False
 
         for key, value in lookup_params.items():
@@ -157,7 +157,7 @@ class ChangeList:
                 # processes. If that happened, check if distinct() is needed to
                 # remove duplicate results.
                 if lookup_params_count > len(lookup_params):
-                    use_distinct = use_distinct or lookup_needs_distinct(self.lookup_opts, field_path)
+                    may_have_duplicates |= lookup_needs_distinct(self.lookup_opts, field_path)
             if spec and spec.has_output():
                 filter_specs.append(spec)
                 if lookup_params_count > len(lookup_params):
@@ -203,9 +203,9 @@ class ChangeList:
         try:
             for key, value in lookup_params.items():
                 lookup_params[key] = prepare_lookup_value(key, value)
-                use_distinct = use_distinct or lookup_needs_distinct(self.lookup_opts, key)
+                may_have_duplicates |= lookup_needs_distinct(self.lookup_opts, key)
             return (
-                filter_specs, bool(filter_specs), lookup_params, use_distinct,
+                filter_specs, bool(filter_specs), lookup_params, may_have_duplicates,
                 has_active_filters,
             )
         except FieldDoesNotExist as e:
@@ -445,7 +445,7 @@ class ChangeList:
             self.filter_specs,
             self.has_filters,
             remaining_lookup_params,
-            filters_use_distinct,
+            filters_may_have_duplicates,
             self.has_active_filters,
         ) = self.get_filters(request)
         # Then, we let every list filter modify the queryset to its liking.
@@ -472,15 +472,10 @@ class ChangeList:
             # ValueError, ValidationError, or ?.
             raise IncorrectLookupParameters(e)
 
-        if not qs.query.select_related:
-            qs = self.apply_select_related(qs)
-
-        # Set ordering.
-        ordering = self.get_ordering(request, qs)
-        qs = qs.order_by(*ordering)
-
         # Apply search results
-        qs, search_use_distinct = self.model_admin.get_search_results(request, qs, self.query)
+        qs, search_may_have_duplicates = self.model_admin.get_search_results(
+            request, qs, self.query,
+        )
 
         # Set query string for clearing all filters.
         self.clear_all_filters_qs = self.get_query_string(
@@ -488,10 +483,18 @@ class ChangeList:
             remove=self.get_filters_params(),
         )
         # Remove duplicates from results, if necessary
-        if filters_use_distinct | search_use_distinct:
-            return qs.distinct()
-        else:
-            return qs
+        if filters_may_have_duplicates | search_may_have_duplicates:
+            qs = qs.filter(pk=OuterRef('pk'))
+            qs = self.root_queryset.filter(Exists(qs))
+
+        # Set ordering.
+        ordering = self.get_ordering(request, qs)
+        qs = qs.order_by(*ordering)
+
+        if not qs.query.select_related:
+            qs = self.apply_select_related(qs)
+
+        return qs
 
     def apply_select_related(self, qs):
         if self.list_select_related is True:

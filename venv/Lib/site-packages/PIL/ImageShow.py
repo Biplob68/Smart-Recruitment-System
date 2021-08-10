@@ -207,7 +207,8 @@ class EogViewer(UnixViewer):
     """The GNOME Image Viewer ``eog`` command."""
 
     def get_command_ex(self, file, **options):
-        command = executable = "eog"
+        executable = "eog"
+        command = "eog -n"
         return command, executable
 
 
@@ -256,7 +257,7 @@ else:
 if __name__ == "__main__":
 
     if len(sys.argv) < 2:
-        print("Syntax: python ImageShow.py imagefile [title]")
+        print("Syntax: python3 ImageShow.py imagefile [title]")
         sys.exit()
 
     with Image.open(sys.argv[1]) as im:

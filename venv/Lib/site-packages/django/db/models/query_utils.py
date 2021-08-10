@@ -5,6 +5,7 @@ Factored out from django.db.models.query to avoid making the main module very
 large and/or so that they can be used by other modules without getting into
 circular import difficulties.
 """
+import copy
 import functools
 import inspect
 import warnings
@@ -71,14 +72,11 @@ class Q(tree.Node):
         if not(isinstance(other, Q) or getattr(other, 'conditional', False) is True):
             raise TypeError(other)
 
-        # If the other Q() is empty, ignore it and just use `self`.
-        if not other:
+        if not self:
+            return other.copy() if hasattr(other, 'copy') else copy.copy(other)
+        elif isinstance(other, Q) and not other:
             _, args, kwargs = self.deconstruct()
             return type(self)(*args, **kwargs)
-        # Or if this Q is empty, ignore it and just use `other`.
-        elif not self:
-            _, args, kwargs = other.deconstruct()
-            return type(other)(*args, **kwargs)
 
         obj = type(self)()
         obj.connector = conn
@@ -112,14 +110,10 @@ class Q(tree.Node):
         path = '%s.%s' % (self.__class__.__module__, self.__class__.__name__)
         if path.startswith('django.db.models.query_utils'):
             path = path.replace('django.db.models.query_utils', 'django.db.models')
-        args, kwargs = (), {}
-        if len(self.children) == 1 and not isinstance(self.children[0], Q):
-            child = self.children[0]
-            kwargs = {child[0]: child[1]}
-        else:
-            args = tuple(self.children)
-            if self.connector != self.default:
-                kwargs = {'_connector': self.connector}
+        args = tuple(self.children)
+        kwargs = {}
+        if self.connector != self.default:
+            kwargs['_connector'] = self.connector
         if self.negated:
             kwargs['_negated'] = True
         return path, args, kwargs
