@@ -1,7 +1,7 @@
                                                      Smart Recruitment System
 #### _A Django-based resume ranker website where recruiter can post jobs, candidate can apply for the job, fill in the required data, upload resumes, and the system shortlists the candidate resumes. The system ranks the CVs based on the document similarity of the job description and the resumes using the KNN model and shows the shortlist._
 
-## _Introduction:_
+## _Introduction:_ 
 _Find the best candidate from a recruitment process within the shortest time is challenging for a company. For this purpose, we proposed a recruitment system where recruiters will post their current vacancy with some personality questions. Then applicants will answer all the questions along with dropping the CV for a particular job. Then, the system will automatically parse the resume to find out the required skills and produce a shortlist by combining question answering and resume parsing score._
 
 ## _Objective:_
