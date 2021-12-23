@@ -37,3 +37,20 @@ _Find the best candidate from a recruitment process within the shortest time is 
 * **Document Similarity Matching Score:** TF-IDF weight, KNN.
 * **Final Score**.
    
+
+## _Home Page_
+![homepage](https://user-images.githubusercontent.com/66861180/147251958-206f7eb6-a37b-431f-a072-cc04a5cd5589.PNG)
+
+## _Job Listing Page_
+![job_listing](https://user-images.githubusercontent.com/66861180/147252023-4d86ed09-c0c5-40bb-b074-cbf95009c265.PNG)
+
+## _Single Job description_
+![single_job](https://user-images.githubusercontent.com/66861180/147252001-d47c57cd-bc28-4c2d-9a0a-fe6ffeb29947.PNG)
+
+## _Apply Job Page_
+![apply_job](https://user-images.githubusercontent.com/66861180/147252049-9a443358-840f-4c33-86b4-b41b9fffe869.PNG)
+
+## _Final Ranking_
+![ranking_page](https://user-images.githubusercontent.com/66861180/147252086-5c082833-2c1c-415c-a131-6e68f11e62e5.PNG)
+
+
