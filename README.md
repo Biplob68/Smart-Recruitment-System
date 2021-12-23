@@ -41,6 +41,9 @@ _Find the best candidate from a recruitment process within the shortest time is 
 ## _Home Page_
 ![homepage](https://user-images.githubusercontent.com/66861180/147251958-206f7eb6-a37b-431f-a072-cc04a5cd5589.PNG)
 
+## _Post a Job_
+![post_job](https://user-images.githubusercontent.com/66861180/147252611-47dd1e70-3594-4e56-af67-e97f08a18dda.PNG)
+
 ## _Job Listing Page_
 ![job_listing](https://user-images.githubusercontent.com/66861180/147252023-4d86ed09-c0c5-40bb-b074-cbf95009c265.PNG)
 
